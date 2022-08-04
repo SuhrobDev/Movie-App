@@ -1,0 +1,2 @@
+rootProject.name = "projecty_for_exprees24"
+include ':app'

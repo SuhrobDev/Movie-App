@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.soul.suhrob.soul.fragments.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splashFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:popUpTo="@+id/mainFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/actorFragment"
+        android:name="com.soul.suhrob.soul.fragments.ActorDetailFragment"
+        android:label="About actor"
+        tools:layout="@layout/fragment_actor_detail" />
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.soul.suhrob.soul.fragments.main.MainFragment"
+        android:label="Movies"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_actorFragment"
+            app:destination="@id/actorFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_movieDetailFragment"
+            app:destination="@id/movieDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/movieDetailFragment"
+        android:name="com.soul.suhrob.soul.fragments.MovieDetailFragment"
+        android:label="Details"
+        tools:layout="@layout/fragment_movie_detail" />
+</navigation>
